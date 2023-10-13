@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ppaeshljaon"]
+
+[ext_resource type="Texture2D" uid="uid://cc7aygoshh1t" path="res://Assets/Idle-Anim.png" id="1_injjq"]
+
+[node name="pikachuSprite" type="Sprite2D"]
+position = Vector2(2, 3)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_injjq")
+hframes = 5
+vframes = 8

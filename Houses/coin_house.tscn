@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://2qe2hkv4kmmp"]
+
+[ext_resource type="Script" path="res://Houses/coin_house.gd" id="1_7ac8f"]
+[ext_resource type="Texture2D" uid="uid://o3vcoe847nxk" path="res://Assets/plant_arena.png" id="1_18b38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umc15"]
+size = Vector2(31, 22)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e51rh"]
+bg_color = Color(0.192157, 0.92549, 0, 0.886275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b23g"]
+bg_color = Color(0.882353, 0.482353, 0, 1)
+
+[node name="CoinHouse" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_7ac8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_umc15")
+debug_color = Color(0, 0.584314, 0.701961, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -13.0
+offset_top = -28.0
+offset_right = 13.0
+offset_bottom = -23.0
+theme_override_styles/background = SubResource("StyleBoxFlat_e51rh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0b23g")
+value = 50.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Resources" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_18b38")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

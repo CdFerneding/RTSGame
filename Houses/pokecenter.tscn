@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://fiuk6vwxn3j7"]
+
+[ext_resource type="Texture2D" uid="uid://j5wsmqgi1v0f" path="res://Assets/pokemon_center.png" id="1_fmxxx"]
+[ext_resource type="Script" path="res://Houses/pokecenter.gd" id="1_rlcpm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vd5w"]
+size = Vector2(61, 41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqv6b"]
+bg_color = Color(0.847059, 0.501961, 0.247059, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.764706, 0.658824, 1)
+border_blend = true
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Pokecenter" type="StaticBody2D"]
+y_sort_enabled = true
+input_pickable = true
+script = ExtResource("1_rlcpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 10.5)
+shape = SubResource("RectangleShape2D_4vd5w")
+
+[node name="PokemonCenter" type="Sprite2D" parent="."]
+texture = ExtResource("1_fmxxx")
+
+[node name="Selected" type="Panel" parent="."]
+offset_left = -32.0
+offset_top = -31.0
+offset_right = 31.0
+offset_bottom = 31.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hqv6b")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

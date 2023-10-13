@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cen3fl402pwc0"]
+
+[ext_resource type="Script" path="res://Global/POP.gd" id="1_bklmt"]
+
+[node name="POP" type="Label"]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+script = ExtResource("1_bklmt")

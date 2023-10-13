@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg3w1mrb6b4kf"]
+
+[ext_resource type="Texture2D" uid="uid://j5wsmqgi1v0f" path="res://Assets/pokemon_center.png" id="1_hb5j5"]
+
+[node name="PokemonCenter" type="Sprite2D"]
+texture = ExtResource("1_hb5j5")

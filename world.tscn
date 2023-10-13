@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://drvb8bf52bslx"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_pg560"]
+[ext_resource type="Script" path="res://UI/Camera.gd" id="1_sbgwj"]
+[ext_resource type="PackedScene" uid="uid://b3g7voyst3d3e" path="res://Unit/unit.tscn" id="2_o3rff"]
+[ext_resource type="Texture2D" uid="uid://cxakxth1f1j51" path="res://Assets/Grass - Copy.png" id="2_vlq4a"]
+[ext_resource type="PackedScene" uid="uid://pnn17bm6g42t" path="res://UI/ui.tscn" id="3_at6sw"]
+[ext_resource type="PackedScene" uid="uid://roaytn4k1ufd" path="res://World Objects/tree.tscn" id="4_vnv0i"]
+[ext_resource type="PackedScene" uid="uid://fiuk6vwxn3j7" path="res://Houses/pokecenter.tscn" id="7_anxng"]
+[ext_resource type="PackedScene" uid="uid://2qe2hkv4kmmp" path="res://Houses/coin_house.tscn" id="8_f3ir4"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_pg560")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.866667, 0.792157, 1, 1)
+offset_right = 7360.0
+offset_bottom = 4800.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_vlq4a")
+stretch_mode = 1
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(580, 325)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("1_sbgwj")
+
+[node name="UI" parent="." instance=ExtResource("3_at6sw")]
+
+[node name="Units" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Unit" parent="Units" instance=ExtResource("2_o3rff")]
+position = Vector2(401.396, 278.027)
+
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(488, 232)
+
+[node name="Tree2" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(322, 357)
+
+[node name="Tree3" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(688, 240)
+
+[node name="Tree4" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(622, 162)
+
+[node name="Tree5" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(800, 442)
+
+[node name="Tree6" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(581, 459)
+
+[node name="Tree7" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(603, 276)
+
+[node name="Tree8" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(420, 382)
+
+[node name="Tree9" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(563, 352)
+
+[node name="Tree10" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(784, 364)
+
+[node name="Tree11" parent="Objects" instance=ExtResource("4_vnv0i")]
+position = Vector2(379, 232)
+
+[node name="Houses" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Pokecenter" parent="Houses" instance=ExtResource("7_anxng")]
+position = Vector2(464, 296)
+
+[node name="Pokecenter2" parent="Houses" instance=ExtResource("7_anxng")]
+position = Vector2(705, 396)
+
+[node name="Resources" type="Node2D" parent="."]
+
+[node name="CoinHouse" parent="Resources" instance=ExtResource("8_f3ir4")]
+position = Vector2(556, 204)

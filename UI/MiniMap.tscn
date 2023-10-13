@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm3pn5rcq2hx4"]
+
+[ext_resource type="Texture2D" uid="uid://cxakxth1f1j51" path="res://Assets/Grass - Copy.png" id="1_kxu1o"]
+[ext_resource type="Script" path="res://UI/SubViewport.gd" id="1_n3f0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qcj1"]
+bg_color = Color(0, 0.34902, 0.560784, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MiniMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 158.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qcj1")
+metadata/_edit_lock_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 298.0
+offset_bottom = 296.0
+scale = Vector2(0.5, 0.5)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(285, 285)
+render_target_update_mode = 4
+script = ExtResource("1_n3f0h")
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+modulate = Color(0.866667, 0.792157, 1, 1)
+offset_left = -312.0
+offset_top = -174.0
+offset_right = 7423.0
+offset_bottom = 4626.0
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("1_kxu1o")
+stretch_mode = 1
+
+[node name="Camera" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+limit_left = 0
+limit_top = 0
+
+[node name="Units" type="Node2D" parent="SubViewportContainer/SubViewport"]
+y_sort_enabled = true
